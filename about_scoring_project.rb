@@ -31,6 +31,22 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   # You need to write this method
+  points = 0
+  if dice.length > 0
+    ones = [1,1,1]
+    fives = [5,5,5]
+    for i in 0..(dice.length - 1)
+      if !dice[i + 1].nil? && !dice[i + 2].nil?
+        if [dice[i], dice[i+1], dice[i+2]] == ones
+          points += 1000
+        elsif [dice[i], dice[i+1], dice[i+2]] == fives
+          points += 500
+        end
+      end
+    end
+  else
+    return points
+  end
 end
 
 class AboutScoringProject < Neo::Koan
