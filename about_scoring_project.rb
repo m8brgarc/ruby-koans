@@ -44,9 +44,9 @@ def score(dice)
         end
       end
     end
-  else
-    return points
   end
+  
+  return points
 end
 
 class AboutScoringProject < Neo::Koan
